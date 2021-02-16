@@ -4,44 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Will Podbela's Portfolio">
     <title>Will Podbela</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h1>Will Podbela</h1>
-        <img src="me.jpg" width="300">
-        <p><b>Student @ Boston College</b></p>
-        <p>podbela@bc.edu</p>
-        <p>2150 Commonwealth Ave, Brighton, MA 02135</p>
-    </section>
-    <br>
-    <section id="about">
-        <h3>About</h3>
-        <p>Will Podbela is a senior at Boston College from Long Island, NY. He is graduating this May with a degree in Computer Science and will be working at Bank of America in New York. His primary interest is in building web applications.</p>
-    </section>
-    <br>
-    <section id="news">
-        <h3>News</h3>
-        <p>Completed summer internship for Bank of America</p>
-        <p>August 21, 2020</p>
-        <p>Arrived at Boston College for senior year</p>
-        <p>August 27, 2020</p>
-        <p>Enrolled in Web Application Development course</p>
-        <p>January 30, 2021</p>
-    </section>
-    <br>
-    <section id="projects">
-        <h3>Projects</h3>
-        <p><a href="engineears.html">EngineEars</a></p>
-        <p><a href="therotation.html">The Rotation</a></p>
-        <p><a href="8bitmultiplier.html">8-Bit Multiplier</a></p>
-    </section>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <a href="#news">
+                        News <i class="fas fa-newspaper"></i>
+                    </a>
+                    
+                </li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+        <br>
+        <section>
+            <h1 class="animate__animated animate__infinite animate__bounce animate__delay-2s">Will Podbela</h1>
+            <div>
+                <img class="profile" src="me.jpg">
+            </div>
+            
+            <p><b>Student @ Boston College</b></p>
+            <p>podbela@bc.edu</p>
+            <p>2150 Commonwealth Ave, Brighton, MA 02135</p>
+        </section>
+        <br>
+        <section id="about">
+            <h3>About</h3>
+            <p>Will Podbela is a senior at Boston College from Long Island, NY. He is graduating this May with a degree in Computer Science and will be working at Bank of America in New York. His primary interest is in building web applications.</p>
+        </section>
+        <br>
+        <section id="news">
+            <h3>News</h3>
+            <div class="row">
+                <div class="col-8">
+                    <p>Completed summer internship for Bank of America</p>
+                    <p>Arrived at Boston College for senior year</p>
+                    <p>Enrolled in Web Application Development course</p>
+                </div>
+                <div class="col-4">
+                    <p>August 21, 2020</p>
+                    <p>August 27, 2020</p>
+                    <p>January 30, 2021</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <section id="projects">
+            <h3>Projects</h3>
+            <p><a href="engineears.html">EngineEars</a></p>
+            <div class="flex">
+                <div class="project-tag">
+                    <p class="react tag-text">React</p>
+                </div>
+                <div class="project-tag">
+                    <p class="freelance tag-text">Freelance</p>
+                </div>
+            </div>
+            <p><a href="therotation.html">The Rotation</a></p>
+            <div class="flex">
+                <div class="project-tag">
+                    <p class="react tag-text">React</p>
+                </div>
+                <div class="project-tag">
+                    <p class="freelance tag-text">Freelance</p>
+                </div>
+            </div>
+            <p><a href="8bitmultiplier.html">8-Bit Multiplier</a></p>
+            <div class="project-tag">
+                <p class="course-work tag-text">Course Work</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

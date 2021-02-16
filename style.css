@@ -1,0 +1,85 @@
+nav ul{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-decoration: none;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.profile{
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-tag{
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.tag-text{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.flex{
+    display: flex;
+}
+
+.course-work{
+    background-color: yellowgreen;
+}
+
+.react{
+    background-color: cyan;
+}
+
+.freelance{
+    background-color: tomato;
+}
+
+[class|="col"]{
+    flex-basis: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .col-1 {flex-basis: 8.33%;}
+    .col-2 {flex-basis: 16.66%;}
+    .col-3 {flex-basis: 25%;}
+    .col-4 {flex-basis: 33.33%;}
+    .col-5 {flex-basis: 41.66%;}
+    .col-6 {flex-basis: 50%;}
+    .col-7 {flex-basis: 58.33%;}
+    .col-8 {flex-basis: 66.66%;}
+    .col-9 {flex-basis: 75%;}
+    .col-10 {flex-basis: 83.33%;}
+    .col-11 {flex-basis: 91.66%;}
+    .col-12 {flex-basis: 100%;}
+}
+
+section h3{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2rem;
+    text-align: center;
+}
