@@ -1,0 +1,53 @@
+{
+    "about":{
+		"name":"Will Podbela",
+        "title":"Stusent @ Boston College",
+        "photo":"assets/me.jpg",
+        "email":"podbela@bc.edu",
+        "bio":"Will Podbela is a senior at Boston College from Long Island, NY. He is graduating this May with a degree in Computer Science and will be working at Bank of America in New York. His primary interest is in building web applications."
+	},
+	"news":[
+		{
+			"title": "Completed summer internship for Bank of America",
+			"date": "August 21, 2020"
+		},
+        {
+			"title": "Arrived at Boston College for senior year",
+			"date": "August 27, 2020"
+		},
+        {
+			"title": "Enrolled in Web Application Development course",
+			"date": "January 30, 2021"
+		}
+	],
+	"projects":[
+		{
+			"id":"engineears",
+            "title": "EngineEars",
+            "tags":["React", "Freelance"],
+            "link": "https://engineears.com/",
+            "description": ["This was a freelance project I did over quarantine before my internship from April to June. I assisted in building the front-end of this website using React and Material UI."]
+		},
+        {
+			"id":"therotation",
+            "title": "The Rotation",
+            "tags":["React", "Freelance"],
+            "link": "https://join.therotation.club/",
+            "description": [
+                "Hired part-time as the 2nd employee of The Rotation fashion rental startup",
+                "Implemented new single-page React application to replace outdated Ruby on Rails front-end",
+                "Took website from simple landing page to having feature parity with the iOS app, giving customers the ability to browse the catalog, make reservations, and manage their account from the website",
+                "Refactored Rails back-end to create and modify API endpoints as needed",
+                "Collaborated with UI designer to create components based on InVision and Figma prototypes",
+                "Participated in weekly huddle meetings with the team to give progress updates, showcase new features, and discuss next steps"
+            ]
+		},
+        {
+			"id":"8bitmultiplier",
+            "title": "8-Bit Multiplier",
+            "tags":["Course Work"],
+            "link": "https://www.youtube.com/watch?v=7ntU8wchfUY&ab_channel=WilliamPodbela",
+            "description": ["This was a project I completed in my Computer Organization class. Click on the link above to watch my explanation and demonstration of the project."]
+		}
+	]
+}
