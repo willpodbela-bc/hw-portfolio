@@ -3,7 +3,6 @@ fetch('assets/data.json')
         return response.json();
     })
     .then(data => {
-        console.log(data);
         const params = new URLSearchParams(window.location.search)
         const id = params.get("project")
         if(id !== null){ 
@@ -20,7 +19,6 @@ fetch('assets/data.json')
     });
 
 function renderNavbar(page, items){
-    //TODO: fix "undefined" bug
     if(page === "project"){
         return `
         <li>
@@ -28,11 +26,19 @@ function renderNavbar(page, items){
         </li>
         `;
     }else{
-        items.map(d=>`
-            <li>
-                <a href="#${d}">${d}</a>
-            </li>
-        `).join('');
+        return `
+        <br><br><br>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <a href="#news">
+                        News <i class="fas fa-newspaper"></i>
+                    </a>
+                </li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>`
     }
 }
 
@@ -43,6 +49,26 @@ function renderMainPage(data){
         ${renderNews(data.news)}
         ${renderProjects(data.projects)}
     `;
+    addInteractions(data)
+}
+
+function addInteractions(data){
+    document.querySelector('.search input[name="news"]').addEventListener('input', (event)=>{
+        const filteredNews = data.news.filter(newsItem => {
+            return newsItem.title.toLowerCase().includes(event.target.value.toLowerCase())
+        })
+        document.querySelector('.news-list').innerHTML = renderNewsItems(filteredNews)
+    })
+    document.querySelectorAll('.filter input[name="filter"]').forEach(cond=>cond.addEventListener('change', function(event){
+        const filteredProjects = data.projects.filter(projectsItem => {
+            return projectsItem.tags.map(tag => tag.toLowerCase().replace(" ", "-")).includes(event.target.value)
+        })
+        if(filteredProjects.length > 0){
+            document.querySelector('.project-list').innerHTML = renderProjectItems(filteredProjects)
+        }else{
+            document.querySelector('.project-list').innerHTML = renderProjectItems(data.projects)
+        }
+    }))
 }
 
 function renderAbout(about){
@@ -66,15 +92,25 @@ function renderNews(news){
     return `
     <section id="news">
         <h3>News</h3>
-        <div class="row">
-            <div class="col-8">
-                ${renderNewsTitles(news)}
-            </div>
-            <div class="col-4">
-                ${renderNewsDates(news)}
-            </div>
+        <div class="search">
+            <input type="search" name="news" placeholder="Search News...">
+        </div>
+        <div class="row news-list">
+            ${renderNewsItems(news)}
         </div>
     </section>`;
+}
+
+function renderNewsItems(news){
+    const newsLimit = 3
+    news = news.slice(0, newsLimit)
+    return `
+    <div class="col-8">
+        ${renderNewsTitles(news)}
+    </div>
+    <div class="col-4">
+        ${renderNewsDates(news)}
+    </div>`
 }
 
 function renderNewsTitles(news){
@@ -93,7 +129,27 @@ function renderProjects(projects){
     return `
     <section id="projects">
         <h3>Projects</h3>
-        ${renderProjectItems(projects)}
+        <div class="filter">
+            <label>
+                <input type="radio" name="filter" value="all" checked>
+                All
+            </label>
+            <label>
+                <input type="radio" name="filter" value="react">
+                React
+            </label>
+            <label>
+                <input type="radio" name="filter" value="freelance">
+                Freelance
+            </label>
+            <label>
+                <input type="radio" name="filter" value="course-work">
+                Course Work
+            </label>
+        </div>
+        <div class="project-list">
+            ${renderProjectItems(projects)}
+        </div>
     </section>
     `;
 }
@@ -116,7 +172,6 @@ function renderProjectTags(tags){
 }
 
 function renderProjectPage(project){
-    console.log(project)
     document.querySelector('.container').innerHTML = `
         ${renderNavbar('project')}
         <h1><a href="${project.link}">${project.title}</a></h1>
